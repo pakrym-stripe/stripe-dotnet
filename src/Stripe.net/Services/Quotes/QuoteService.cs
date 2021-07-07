@@ -3,7 +3,7 @@ namespace Stripe
 {
     using System.Collections.Generic;
     using System.Net.Http;
-    using System.Io;
+    using System.IO;
     using System.Threading;
     using System.Threading.Tasks;
 
@@ -73,26 +73,6 @@ namespace Stripe
         public virtual Task<Quote> GetAsync(string id, QuoteGetOptions options = null, RequestOptions requestOptions = null, CancellationToken cancellationToken = default)
         {
             return this.GetEntityAsync(id, options, requestOptions, cancellationToken);
-        }
-
-        public virtual StripeList<Quote> List(QuoteListOptions options = null, RequestOptions requestOptions = null)
-        {
-            return this.ListEntities(options, requestOptions);
-        }
-
-        public virtual Task<StripeList<Quote>> ListAsync(QuoteListOptions options = null, RequestOptions requestOptions = null, CancellationToken cancellationToken = default)
-        {
-            return this.ListEntitiesAsync(options, requestOptions, cancellationToken);
-        }
-
-        public virtual IEnumerable<Quote> ListAutoPaging(QuoteListOptions options = null, RequestOptions requestOptions = null)
-        {
-            return this.ListEntitiesAutoPaging(options, requestOptions);
-        }
-
-        public virtual IAsyncEnumerable<Quote> ListAutoPagingAsync(QuoteListOptions options = null, RequestOptions requestOptions = null, CancellationToken cancellationToken = default)
-        {
-            return this.ListEntitiesAutoPagingAsync(options, requestOptions, cancellationToken);
         }
 
         public virtual StripeList<Quote> List(QuoteListOptions options = null, RequestOptions requestOptions = null)
