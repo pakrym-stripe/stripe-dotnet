@@ -1,7 +1,9 @@
 // File generated from our OpenAPI spec
 namespace Stripe
 {
+    using System;
     using Newtonsoft.Json;
+    using Stripe.Infrastructure;
 
     public class QuoteSubscriptionDataOptions : INestedOptions
     {
@@ -14,6 +16,7 @@ namespace Stripe
         /// is accepted.
         /// </summary>
         [JsonProperty("effective_date")]
+        [JsonConverter(typeof(AnyOfConverter))]
         public AnyOf<DateTime?, QuoteSubscriptionDataEffectiveDate> EffectiveDate { get; set; }
 
         /// <summary>

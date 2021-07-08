@@ -1,7 +1,7 @@
 // File generated from our OpenAPI spec
 namespace Stripe
 {
-    public class QuoteListLineItemsOptions : BaseOptions
+    public class QuoteListLineItemsOptions : ListOptions
     {
     }
 }

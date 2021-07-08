@@ -2,8 +2,8 @@
 namespace Stripe
 {
     using System.Collections.Generic;
-    using System.Net.Http;
     using System.IO;
+    using System.Net.Http;
     using System.Threading;
     using System.Threading.Tasks;
 
@@ -107,12 +107,12 @@ namespace Stripe
 
         public virtual IEnumerable<LineItem> ListLineItemsAutoPaging(string id, QuoteListLineItemsOptions options = null, RequestOptions requestOptions = null)
         {
-            return this.ListRequestAutoPaging<LineItem>(HttpMethod.Get, $"{this.InstanceUrl(id)}/line_items", options, requestOptions);
+            return this.ListRequestAutoPaging<LineItem>($"{this.InstanceUrl(id)}/line_items", options, requestOptions);
         }
 
         public virtual IAsyncEnumerable<LineItem> ListLineItemsAutoPagingAsync(string id, QuoteListLineItemsOptions options = null, RequestOptions requestOptions = null, CancellationToken cancellationToken = default)
         {
-            return this.ListRequestAutoPagingAsync<LineItem>(HttpMethod.Get, $"{this.InstanceUrl(id)}/line_items", options, requestOptions, cancellationToken);
+            return this.ListRequestAutoPagingAsync<LineItem>($"{this.InstanceUrl(id)}/line_items", options, requestOptions, cancellationToken);
         }
 
         public virtual Stream Pdf(string id, QuotePdfOptions options = null, RequestOptions requestOptions = null)
